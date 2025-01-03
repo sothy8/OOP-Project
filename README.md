@@ -4,8 +4,6 @@
 
 This project focuses on implementing object-oriented programming (OOP) concepts using Django to create a web application for managing products such as books or other items.
 
-
-
 ## Setup
 
 ### Clone the Repository
