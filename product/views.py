@@ -35,11 +35,13 @@ def create(request: HttpRequest):
 
 
 def read(request: HttpRequest):
+    count = Product.objects.count()
     products = Product.objects.all()  #yk all object from database
     return render(
         request=request,
         template_name="product/read.html",
         context = {
+            "count": count,
             "products": products  # yk vea mk nis dermbei oy brer tv read bn
         },
     )

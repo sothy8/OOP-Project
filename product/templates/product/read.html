@@ -19,10 +19,25 @@
             </tr>
         </thead>
         <tbody>
+
             <!-- Example Row (Replace with dynamic data) -->
-            {% for product in products %}
+            {% comment %} {% for product in products %} {% endcomment %}
             <tr>
-                <td>{{ product.product_id }}</td>
+                {% comment %} {% for counts in count %}
+                <td>{{ counts }}</td>
+                {% endfor %}  {% endcomment %}
+
+                <p>
+                    {{type(count)}}
+                </p> 
+                {% for product in products %}
+                
+                    {% comment %} {% for count in counts %}
+                    <td>{{
+                    
+                        counts
+                    }}</td>
+                    {% endfor %}  {% endcomment %}
                 <td>{{ product.product_category }}</td>
                 <td>{{ product.product_item }}</td>
                 <td>{{ product.product_size }}</td>
@@ -32,8 +47,9 @@
                 <td>{{ product.product_releasing_year }}</td>
                 <td><a href="{% url 'update' product.product_id %}" class="btn btn-update">Update</a></td>
                 <td><a href="{% url 'delete' product.product_id %}" class="btn btn-delete">Delete</a></td>
+                {% endfor %}
             </tr>
-            {% endfor %}
+            
             <!-- More rows dynamically generated -->
         </tbody>
     </table>
