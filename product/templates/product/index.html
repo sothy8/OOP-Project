@@ -1,0 +1,19 @@
+{% extends 'product/base.html' %}
+{% block title %}
+    Sothy
+{% endblock title %}
+{% block content %}  <!-- line1& : command of django-->
+
+<h1>Welcome to Clothes Management System</h1>
+<div class="card">
+    <p class="card-text">
+        Effortlessly manage your clothing inventory with our user-friendly platform. 
+        Keep track of stock, categories, and sales with ease. 
+        Optimize your workflow and ensure your wardrobe or business stays organized!
+    </p>
+    <div class="container space-between">
+        <a href="{% url 'create' %}" class="btn">Add New Items</a>
+        <a href="{% url 'read' %}" class="btn btn-secondary">View Items</a>
+    </div>
+</div>
+{% endblock content %}

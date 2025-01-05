@@ -1,0 +1,41 @@
+<!-- "read" code of web that that show us the data we have(frontend)   read->urls->"file" we clicked by button(frontend)->views(backend)->database and then "read"->collect data from db to show us in frontend-->
+
+{% extends 'product/base.html' %}
+    {% block content %}
+    <h1>Clothes List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Item</th>
+                <th>Size</th>
+                <th>Color</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Releasing year</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example Row (Replace with dynamic data) -->
+            {% for product in products %}
+            <tr>
+                <td>{{ product.product_id }}</td>
+                <td>{{ product.product_category }}</td>
+                <td>{{ product.product_item }}</td>
+                <td>{{ product.product_size }}</td>
+                <td>{{ product.product_color }}</td>
+                <td>{{ product.product_brand }}</td>
+                <td>{{ product.product_price }}</td>
+                <td>{{ product.product_releasing_year }}</td>
+                <td><a href="{% url 'update' product.product_id %}" class="btn btn-update">Update</a></td>
+                <td><a href="{% url 'delete' product.product_id %}" class="btn btn-delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+            <!-- More rows dynamically generated -->
+        </tbody>
+    </table>
+    {% endblock content %}
+
